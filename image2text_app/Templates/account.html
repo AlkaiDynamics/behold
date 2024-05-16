@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image2text_app - Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <!-- Navigation Bar -->
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                    <li><a href="{% url 'upload_image' %}" class="nav-link">Upload Image</a></li>
+                    <li><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2>Your Account</h2>
+            <div class="account-details">
+                <p><strong>Username:</strong> {{ user.username }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <!-- Account management links -->
+                <a href="{% url 'update_account' %}" class="btn">Update Account</a>
+                <a href="{% url 'change_password' %}" class="btn">Change Password</a>
+                <!-- Display user activity, if applicable -->
+            </div>
+            <p class="security-reminder">Reminder: Keep your account details safe and updated.</p>
+        </main>
+        <footer class="site-footer">
+            <!-- Footer content -->
+        </footer>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+

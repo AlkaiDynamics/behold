@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image2text_app - Style Selection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <!-- Add navigation links here if needed -->
+            <a href="{% url 'home' %}" class="btn-back">Back to Home</a>
+        </nav>
+        <h2>Select Style for Your Image</h2>
+        <form method="post" class="style-form">
+            {% csrf_token %}
+            {% if form.errors %}
+                <div class="form-errors">
+                    Please correct the following errors:
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-select-style" aria-label="Select Style">Select Style</button>
+        </form>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

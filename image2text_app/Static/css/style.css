@@ -1,0 +1,121 @@
+/* Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #6D83F2, #A8BDFE);
+    color: #fff;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    border-bottom: 3px solid #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    padding: 0 20px;
+}
+
+/* Navigation Styles */
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link.dimmed {
+    opacity: 0.7;
+}
+
+.nav-link:hover {
+    color: #a8bdfd;
+}
+
+/* Form Styles */
+.style-form, .auth-form, .account-details {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Button Styles */
+.btn-select-style, .btn-auth, .btn-home, .btn-back {
+    background: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-select-style:hover, .btn-auth:hover, .btn-home:hover, .btn-back:hover {
+    background: #1E88E5;
+}
+
+/* Result Box Style */
+.result-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+/* Message Styles */
+.messages {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    text-align: center;
+}
+
+.messages .success { background-color: #4CAF50; color: white; }
+.messages .error { background-color: #f44336; color: white; }
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    .style-form, .auth-form, .result-box {
+        padding: 10px;
+    }
+}
+
+/* Footer Styles */
+.site-footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #e1e1e1;
+    margin-top: 50px;
+}

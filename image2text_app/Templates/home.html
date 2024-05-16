@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image2text_app - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <h1>Welcome to image2text_app</h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="{% url 'upload_image' %}" class="nav-link">Upload Image</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'account' %}" class="nav-link">Your Account</a></li>
+                        <li><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+                        <li><a href="{% url 'register' %}" class="nav-link">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        <main class="main-content">
+            <section class="hero">
+                <h2>Transform Your Images Into Text</h2>
+                <p>Explore the power of AI with image2text_app, your go-to tool for creative text generation from images.</p>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <p>&copy; 2023 image2text_app. All rights reserved.</p>
+            <!-- Additional footer content here -->
+        </footer>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

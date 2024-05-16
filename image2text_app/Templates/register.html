@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image2text_app - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Login to Your Account</h2>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-auth">Login</button>
+            <p class="auth-link">Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a></p>
+            <p class="auth-link">New to image2text_app? <a href="{% url 'register' %}">Create an account</a>.</p>
+        </form>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image2text_app - Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="{% url 'home' %}" class="btn-back">Home</a>
+            <!-- Additional navigation links if needed -->
+        </nav>
+        <h2>Generated Text Results</h2>
+        <div class="result-box">
+            <p>{{ generated_text }}</p>
+            <!-- Additional buttons if needed -->
+            <button class="btn-download">Download</button>
+            <button class="btn-edit">Edit</button>
+        </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
